@@ -1,0 +1,164 @@
+body{
+    margin: 0;
+}
+
+h1, h2, h3, h4{
+    color: #333333;
+}
+
+p{
+    font-size: 16px;
+    color: #828282;
+}
+
+.container1{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container2{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+header{
+    border-bottom: 2px solid #F5F5F5;
+    margin-bottom: 20px;
+}
+
+.logo{
+    width: 100px;
+    height: 50px;
+}
+
+.buttons{
+    align-self: center;
+}
+
+.buttonCabecalho{
+    background-color: white;
+    border-color: white;
+    border: 0;
+    padding: 5px;
+    margin: 0 5px 0 5px;
+}
+
+
+
+.cards{
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cardImg{
+    background-color: #F5F5F5;
+    width: 265px
+}
+
+.cardStats{
+    border: 1px solid #F5F5F5;
+    width: 265px;
+    height: 435px;
+    padding: 0;
+    margin: 8px;
+}
+
+.cardStats:hover{
+    border: 1px solid #37268C;
+}
+
+.cardTag{
+    background-color: #2E245E;
+    color: white;
+    padding: 5px 8px 5px 8px;
+    width: 70px;
+    text-align: center;
+}
+
+.cardValue{
+    font-weight: bold;
+    color: #37268C;
+}
+
+.buttonCarrinho{
+    background-color: white;
+    border-color: white;
+    border: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #828282;
+}
+
+
+
+.cardTag, .cardName, .cardDescription, .cardValue, .buttonCarrinho{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.barraPesquisa{
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+.buttonPesquisa{
+    background-color: #37268C;
+    border-color: #37268C;
+    border: 0;
+    color: white; 
+    padding: 8px 10px 8px 10px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.input{
+    background-color: #F5F5F5;
+    border-color: #F5F5F5;
+    border: 0;
+    color: #333333;
+    padding: 8px 22px 8px 22px;
+    margin-top: 8px;
+
+}
+
+.tituloCarrinhoCompra{
+    background-color: #37268C;
+    border-color: #37268C;
+    border: 0;
+    color: white; 
+    padding: 8px 12px 8px 12px;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.corpoCarrinhoCompra{
+    text-align: center;
+    background-color: #F5F5F5;
+    height: 100px;
+    display: table-cell;
+    vertical-align: middle;
+    width: 300px;
+}
+
+.carrinhoVazio{
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.adicionarItens{
+    font-size: 10px;
+}
+
+.buttonCabecalho:hover, .buttonCarrinho:hover, .buttonPesquisa:hover{
+    font-weight: bold;
+}
