@@ -59,7 +59,8 @@ header{
 
 .cardImg{
     background-color: #F5F5F5;
-    width: 265px
+    width: 265px;
+    height: 200px;
 }
 
 .cardStats{
