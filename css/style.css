@@ -11,6 +11,10 @@ p{
     color: #828282;
 }
 
+ul{
+    padding: 0
+}
+
 .container1{
     width: 100%;
     max-width: 1200px;
@@ -60,7 +64,6 @@ header{
 .cardImg{
     background-color: #F5F5F5;
     width: 265px;
-    height: 200px;
 }
 
 .cardStats{
@@ -130,6 +133,11 @@ header{
 
 }
 
+.carrinhoCompra{
+    overflow-y: auto;
+    max-height: 540px;
+}
+
 .tituloCarrinhoCompra{
     background-color: #37268C;
     border-color: #37268C;
@@ -148,7 +156,13 @@ header{
     display: table-cell;
     vertical-align: middle;
     width: 300px;
+    overflow: auto;
+    max-height: 520px;
 }
+
+.corpoCarrinhoCompra-scrollbar{
+    height: 10px;
+  }
 
 .carrinhoVazio{
     font-size: 16px;
@@ -161,5 +175,33 @@ header{
 }
 
 .buttonCabecalho:hover, .buttonCarrinho:hover, .buttonPesquisa:hover{
+    font-weight: bold;
+}
+
+.valorCarrinho{
+    color: #333333;
+    font-weight: bold;
+}
+
+.removerProduto{
+    background-color: #F5F5F5;
+    border-color: #F5F5F5;
+    border: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #828282;
+}
+
+.removerProduto:hover{
+    font-weight: bold;
+}
+
+.carrinhoStats{
+    background-color: black;
+    padding: 10px;
+}
+
+.qtdProdutos, .valorProdutos{
+    color: #F5F5F5;
     font-weight: bold;
 }

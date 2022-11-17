@@ -39,8 +39,92 @@ function itensLoja(lista){
         let button = document.createElement('button')
         button.innerText = "Adicionar ao carrinho"
         button.classList.add("buttonCarrinho")
-        button.setAttribute("id", objeto.nameItem) 
         ul.appendChild(button)
+        button.onclick = function(){
+
+            qtdProdutosCarrinho++
+            valorProdutrosCarrinho += objeto.value
+
+            if(qtdProdutosCarrinho == 1){
+                div.removeChild(txtCarrinhoVazio)
+                div.removeChild(txtAdicionarItens)
+            }
+
+            let imgCarrinho = document.createElement('img')
+            imgCarrinho.src = objeto.img
+            imgCarrinho.alt = objeto.nameItem
+            imgCarrinho.classList.add("imgCarrinho")
+            listaProdutos.appendChild(imgCarrinho)
+
+            let nameCarrinho = document.createElement('h3')
+            nameCarrinho.innerText = objeto.nameItem
+            nameCarrinho.classList.add("nameCarrinho")
+            listaProdutos.appendChild(nameCarrinho)
+
+            let valorCarrinho = document.createElement('p')
+            valorCarrinho.classList.add("valorCarrinho")
+            valorCarrinho.innerText = `R$ ${objeto.value.toFixed(2)}`
+            listaProdutos.appendChild(valorCarrinho)
+
+            let removerProduto = document.createElement('button')
+            removerProduto.innerText = "Remover Produto"
+            removerProduto.classList.add("removerProduto")
+            listaProdutos.appendChild(removerProduto)
+            removerProduto.onclick = function(){
+
+                qtdProdutosCarrinho--
+                valorProdutrosCarrinho -= objeto.value
+
+                listaProdutos.removeChild(imgCarrinho)
+                listaProdutos.removeChild(nameCarrinho)
+                listaProdutos.removeChild(valorCarrinho)
+                listaProdutos.removeChild(removerProduto)
+
+                if(qtdProdutosCarrinho == 0){
+
+                    let divTotal = document.querySelector(".carrinhoStats")
+                    let outro = document.querySelector('.outros')
+
+                    outro.removeChild(divTotal)
+
+                    div.appendChild(txtCarrinhoVazio)
+                    div.appendChild(txtAdicionarItens)
+                }
+                else if(qtdProdutosCarrinho >= 1){
+                    let qtdProdutos = document.querySelector(".qtdProdutos")
+                    qtdProdutos.innerText = `Quantidade: ${qtdProdutosCarrinho}`
+                    let valorProdutos = document.querySelector(".valorProdutos")
+                    valorProdutos.innerText = `Total: R$ ${valorProdutrosCarrinho.toFixed(2)}`
+                }
+
+            }
+
+            if(qtdProdutosCarrinho == 1){
+
+                let outro = document.querySelector('.outros')
+
+                let divTotal = document.createElement('section')
+                divTotal.classList.add("carrinhoStats")
+                outro.appendChild(divTotal)
+
+                let qtdProdutos = document.createElement('p')
+                qtdProdutos.classList.add("qtdProdutos")
+                qtdProdutos.innerText = `Quantidade: ${qtdProdutosCarrinho}`
+                divTotal.appendChild(qtdProdutos)
+    
+                let valorProdutos = document.createElement('p')
+                valorProdutos.classList.add("valorProdutos")
+                valorProdutos.innerText = `Total: R$ ${valorProdutrosCarrinho.toFixed(2)}`
+                divTotal.appendChild(valorProdutos)
+
+            }else if(qtdProdutosCarrinho > 1){
+                let qtdProdutos = document.querySelector(".qtdProdutos")
+                qtdProdutos.innerText = `Quantidade: ${qtdProdutosCarrinho}`
+                let valorProdutos = document.querySelector(".valorProdutos")
+                valorProdutos.innerText = `Total: R$ ${valorProdutrosCarrinho.toFixed(2)}`
+            }
+        
+        }
 
     }
 
@@ -50,21 +134,22 @@ itensLoja(data)
 
 let carrinho = document.querySelector('.carrinhoCompra')
 
-let titulo = document.createElement('h4')
-titulo.innerText = "Carrinho de compras"
-titulo.classList.add("tituloCarrinhoCompra")
-carrinho.appendChild(titulo)
-
 let div = document.createElement('div')
 div.classList.add("corpoCarrinhoCompra")
 carrinho.appendChild(div)
 
-let p1 = document.createElement('p')
-p1.innerText = "Carrinho vazio"
-p1.classList.add("carrinhoVazio")
-div.appendChild(p1)
+let listaProdutos = document.createElement("ul")
+div.appendChild(listaProdutos)
 
-let p2 = document.createElement('p')
-p2.innerText = "Adicionar itens"
-p2.classList.add("adicionarItens")
-div.appendChild(p2)
+let txtCarrinhoVazio = document.createElement('p')
+txtCarrinhoVazio.innerText = "Carrinho vazio"
+txtCarrinhoVazio.classList.add("carrinhoVazio")
+div.appendChild(txtCarrinhoVazio)
+
+let txtAdicionarItens = document.createElement('p')
+txtAdicionarItens.innerText = "Adicionar itens"
+txtAdicionarItens.classList.add("adicionarItens")
+div.appendChild(txtAdicionarItens)
+
+let qtdProdutosCarrinho = 0
+let valorProdutrosCarrinho = 0
